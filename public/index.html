@@ -1,77 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru-RU" ng-app="generatorApp">
+<html lang="en" ng-app="blogApp">
 	<head>
-		<title>Генератор на ангуляре</title>
+		<title>Блог</title>
+		<base href="/">
 		<link rel="stylesheet" href="stylesheets/app.css">
-		<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.min.js"></script>
 		<script src="js/controllers.js"></script>
 	</head>
-	<body  ng-controller="generatorAppCtrl">
-		<header>
-			<h1>Генератор примеров</h1>
-		</header>
-		<div class="block">
-			<div class="subblock subblockLeft">
-				<h2>Условия:</h2>
-				<p> <strong>Количество результатов:</strong></p>
-				<p>
-					<input type="text" ng-model="quantity" class="form-control">
-				</p>
-				<p><strong>Максимальное число:</strong></p>
-				<p>
-					<input type="text" ng-model="maxNumber" class="form-control">
-				</p>
-				<p>
-					<strong>Операторы:</strong>
-				</p>	
-				<div class="checkbox">
-					<table class="table">
-						<tr>
-							<td>
-								<label>
-									<input type="checkbox" ng-model="checkboxOperations.summation">
-									Сложение
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" ng-model="checkboxOperations.multiplication">
-									Умножение
-								</label>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<label>
-									<input type="checkbox" ng-model="checkboxOperations.subtraction">
-									Вычитание
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" ng-model="checkboxOperations.division">
-									Деление
-								</label>
-							</td>
-						</tr>
-					</table>
-				</div>
-				<p>
-					<input class="btn btn-primary" type="button" ng-click="generate()" value="Запуск!" autofocus>
-				</p>
-			</div>
-			<div class="subblock subblockRight">
-				<h2>Результаты:</h2>
-				<div>
-					<div class="results" ng-repeat="res in result track by $index">{{res}}</div>
-				</div>
-			</div>
-		</div>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+	<body ng-controller="indexCtrl">
+		<ng-view></ng-view>
 	</body>
 </html>

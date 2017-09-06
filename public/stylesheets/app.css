@@ -1,44 +1,126 @@
-header h1 {
-  text-transform: uppercase;
-  background-color: #6f5499;
-  color: #fff;
-  padding: 10px;
-  font-size: 1.9em;
+body {
+  font-family: Tahoma, sans-serif;
+  margin: 0;
+  color: #2d484e;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.addForm {
   margin-top: 10px;
-  margin-bottom: 10px; }
+  background-color: #edefff;
+  border-bottom: 5px solid lightblue;
+  color: #266d3c;
+}
 
-table {
-  width: 100%; }
+.posts:nth-child(even) {
+  background-color: #f1f1f1;
+}
 
-td {
-  width: 33%; }
+.posts {
+  padding: 10px;
+  position: relative;
+}
 
-.block {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start; }
+.posts h2 {
+  color: #266d3c;
+}
 
-.subblock {
-  padding: 5px;
+a.subject {
+  color: #266d3c;
+  text-decoration: none;
+}
+
+a.subject:hover {
+  color: #48ad67;
+}
+
+a.back, a.else {
+  color: #266d3c;
+  text-decoration: none;
+  background-color: #f1f1f1;
+  border: 1px solid rgb(169, 169, 169);
+  padding: 10px 15px;
+}
+
+a.else {
+  margin-top: 20px;
+  
   display: inline-block;
-  margin: 0 5px 5px 5px; }
+}
 
-.subblockLeft {
+.elseLink {
+  text-align: center;
+}
+
+a.back:hover, a.else:hover {
+  background-color: #f7f7f7;
+}
+
+.button {
+  color: #266d3c;
+  text-decoration: none;
+  background-color: #f1f1f1;
+  padding: 10px 15px;
+  margin-top: 5px; 
+  border: 1px solid rgb(169, 169, 169);
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #f7f7f7;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.deleteLink {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.deleteLink a{
+  font-size: 1.5em;
+  color: grey;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.deleteLink a:hover {
+  color: red;
+}
+
+form {
+  padding: 20px;
+}
+
+form h3 {
+  margin: 0;
+}
+
+input.text, textarea {
+  box-sizing: border-box;
+  display: block;
   width: 100%;
-  min-width: 220px; }
+  padding: 10px;
+  margin: 10px 200px 5px 0;
+  font-family: Tahoma, sans-serif;
+  resize: none;
+}
 
-.subblockRight {
-  width: 100%; }
+textarea {
+  height: 100px;
+}
 
-@media (min-width: 530px) {
-  .subblockLeft {
-    width: 200px; }
-
-  header h1 {
-    font-size: 2.9em;
-    margin-top: 20px; }
-
-  .block {
-    flex-wrap: nowrap; } }
-
-/*# sourceMappingURL=main.css.map */
+hr {
+  height: 5px;
+  background-color: lightblue;
+  border: 0;
+}

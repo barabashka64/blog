@@ -1,0 +1,40 @@
+<div class="container">
+			<div class="addForm">
+				<form name="addPostForm" ng-submit="addPost(newPost, addPostForm.$valid)" novalidate>
+					<h3>Новая запись</h3>
+					<div>
+						<input type="text" class="text" placeholder="Заголовок поста" name="subject" ng-model="newPost.subject" required>	
+					</div>
+					<div class="error" ng-show="showError">
+						{{getError(addPostForm.subject.$error)}}
+					</div>
+					<div>
+						<textarea placeholder="Содержание поста" name="text" ng-model="newPost.text" required></textarea>
+					</div>
+					<div class="error" ng-show="showError">
+						{{getError(addPostForm.text.$error)}}
+					</div>
+					<div>
+						<input type="submit" value="Добавить пост" class="button">
+					</div>
+				</form>
+			</div>
+
+			<div class="content">
+				<div ng-repeat="post in orderedPosts = (posts | orderBy: $index:true | limitTo:numberOfVisiblePosts) track by $index" class="posts">
+					<h2>
+						<a href="/post/{{$index - orderedPosts.length + 1 | abs}}" class="subject">{{post.subject | subjFilter}}</a>
+					</h2>
+					<div class="deleteLink">
+						<a ng-click="deletePost(post)" href="">X</a>
+					</div>
+					
+					<p>{{post.text | textFilter}}</p>	
+				</div>
+				<div class="elseLink">
+					<a href="" class="else" ng-click="addNumberOfVisiblePosts()">Показать еще</a>
+				</div>
+				
+				<p>Показано {{numberOfVisiblePosts}} из {{posts.length}} постов.</p>
+			</div>
+		</div>
